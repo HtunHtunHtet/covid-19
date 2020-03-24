@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Required meta tags -->
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <title>{% block title %}Covid 19 Myanmar Tracking{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+                  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+                  crossorigin=""/>
+
         {% endblock %}
     </head>
     <body>
 
         <!-- Navigation -->
-        {% include '_nav.html.twig' %}
+        {#{% include '_nav.html.twig' %}#}
 
         <!-- Body -->
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
 
         <!-- Javscript -->
         {% block javascripts %}

@@ -1,1 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+
+
+#map {
+  height: calc(100% - 0px);
+  width: 100%; position: absolute !important;
+}
+
+.caseDesc {
+  list-style: none;
+  display: inline;
+}
