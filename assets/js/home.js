@@ -48,6 +48,30 @@ $(document).ready(function(){
    }
 
    drawMarker(L,mymap,hleguiDetail)
+
+
+   /** Case 3 **/
+   let case3Detail = {
+      'caseNum'     : '3',
+      'confirmTime' : '2020-03-25 01:00:00',
+      'gender'      : 'Male',
+      'age'         : '26',
+      'from'        : 'United Kingdom, England',
+      'visited'     : 'Insein',
+      'currentTreatmentPlace': 'Insein Hospital',
+      'startTreatment'   : '2020-03-23',
+      'sourceLink'  : 'https://www.facebook.com/MinistryOfHealthAndSportsMyanmar/photos/pcb.3273579806004635/3273599522669330/?type=3&theater',
+      'sourceLabel' : 'Ministry of Health and Sports, Myanmar',
+      'lat'         : '16.915120',
+      'lng'         : '96.092386',
+      'fromLat'     : '55.158797',
+      'fromLng'      : '-2.569196'
+   }
+
+   drawMarker(L,mymap,case3Detail)
+
+
+
 });
 
 
