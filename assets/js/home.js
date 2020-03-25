@@ -2,7 +2,7 @@ $(document).ready(function(){
    var mymap = L.map('map').setView([23.008633, 95.424236], 6);
 
    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-      maxZoom: 8,
+      maxZoom: 28,
       attribution: 'Develop with ❤️ by <a href="https://www.linkedin.com/in/htun-htun-htet-75464299/" target="_blank">Htun Htun Htet</a>',
       id: 'mapbox/streets-v11',
       tileSize: 512,
