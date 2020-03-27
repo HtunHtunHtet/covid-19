@@ -1,9 +1,22 @@
 $(document).ready(function(){
+
+
+   $("#confirmToastBtn").click(function () {
+      $("#confirmToast").toast('hide');
+   })
+
+   $("#suspectedToastBtn").click(function () {
+      $("#suspectedToast").toast('hide');
+   })
+
+
    var mymap = L.map('map').setView([23.008633, 95.424236], 6);
+  // L.tileLayer.provider('Stamen.Watercolor').addTo(map);
+
 
    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
       maxZoom: 28,
-      attribution: 'Develop with ❤️ by <a href="https://www.linkedin.com/in/htun-htun-htet-75464299/" target="_blank">Htun Htun Htet</a>',
+      attribution: 'Develop with ❤️ by <a href="https://www.linkedin.com/in/htun-htun-htet-75464299/" target="_blank">Htun Htun Htet</a> | Last update as 2020-03-27',
       id: 'mapbox/streets-v11',
       tileSize: 512,
       zoomOffset: -1
@@ -71,6 +84,45 @@ $(document).ready(function(){
    drawMarker(L,mymap,case3Detail)
 
 
+    /** Case 4 **/
+   let case4Detail= {
+      'caseNum'     : '4',
+      'confirmTime' : '2020-03-25 01:00:00',
+      'gender'      : 'Male',
+      'age'         : '33',
+      'from'        : 'United State Of Amarica',
+      'visited'     : 'Chan Myae Thar Si,Mandalay',
+      'currentTreatmentPlace': 'Kandaw Nadi Hospital',
+      'startTreatment'   : '2020-03-25',
+      'sourceLink'  : 'https://www.facebook.com/MinistryOfHealthAndSportsMyanmar/photos/pcb.3278754752153807/3278751742154108/?type=3&theater',
+      'sourceLabel' : 'Ministry of Health and Sports, Myanmar',
+      'lat'         : '21.945382',
+      'lng'         : '96.095052',
+      'fromLat'     : '39.734131',
+      'fromLng'      : '-102.765097'
+   }
+
+   drawMarker(L,mymap,case4Detail)
+
+   /** Case 5 **/
+   let case5Detail= {
+      'caseNum'     : '5',
+      'confirmTime' : '2020-03-25 01:00:00',
+      'gender'      : 'Male',
+      'age'         : '69',
+      'from'        : 'Australia (1) Month / Singapore (4) Days',
+      'visited'     : 'Mingalar Taung Nyunt Township, Yangon',
+      'currentTreatmentPlace': 'Yangon General Hospital',
+      'startTreatment'   : '2020-03-25',
+      'sourceLink'  : 'https://www.facebook.com/MinistryOfHealthAndSportsMyanmar/photos/pcb.3278754752153807/3278751742154108/?type=3&theater',
+      'sourceLabel' : 'Ministry of Health and Sports, Myanmar',
+      'lat'         : '16.789411',
+      'lng'         : '96.176882',
+      'fromLat'     : '-25.190995',
+      'fromLng'      : ' 133.765219'
+   }
+
+   drawMarker(L,mymap,case5Detail)
 
 });
 
@@ -79,6 +131,14 @@ function drawMarker(L,mymap,details) {
 
    const {caseNum, confirmTime, gender,age, from, visited, startTreatment,
             sourceLink, sourceLabel , lat, lng, fromLat, fromLng , currentTreatmentPlace } = details;
+
+
+   let confirm = L.icon({
+      iconUrl: confirmIcon,
+      iconSize:     [40, 40], // size of the icon
+      iconAnchor:   [22, 35], // point of the icon which will correspond to marker's location
+      popupAnchor:  [-2, -30] // point from which the popup should open relative to the iconAnchor
+   });
 
    let description = `<div> 
                         <div class="caseHeader">Case #${caseNum} <br/> (Confirmed On : ${confirmTime})</div>
@@ -95,7 +155,7 @@ function drawMarker(L,mymap,details) {
                             </div>
                 </div>`
 
-   L.marker([`${lat}`, `${lng}`]).addTo(mymap)
+   L.marker([`${lat}`, `${lng}`], {icon: confirm}).addTo(mymap)
        .bindPopup(description);
 
    let polylineLatLngs = [

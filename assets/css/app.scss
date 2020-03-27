@@ -4,9 +4,16 @@
 #map {
   height: calc(100% - 0px);
   width: 100%; position: absolute !important;
+  z-index:-1;
 }
 
 .caseDesc {
   list-style: none;
   display: inline;
+}
+
+#infoHolder {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
 }
