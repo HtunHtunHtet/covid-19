@@ -8,6 +8,17 @@
         <link rel='icon' href="{{ asset('build/images/mmfav.ico') }}" type='image/x-icon'>
 
         <title>{% block title %}Covid 19 Myanmar Tracking{% endblock %}</title>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162009302-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-162009302-1');
+        </script>
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
