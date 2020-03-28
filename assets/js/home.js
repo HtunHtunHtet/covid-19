@@ -138,8 +138,8 @@ $(document).ready(function(){
       'sourceLabel' : 'Ministry of Health and Sports, Myanmar',
       'lat'         : '16.920784',
       'lng'         : '96.156547',
-      'fromLat'     : '62.066858',
-      'fromLng'      : '-6.700055'
+      'fromLat'     : '54.483796',
+      'fromLng'      : '-3.053766'
    }
 
    drawMarker(L,mymap,case6Detail)
